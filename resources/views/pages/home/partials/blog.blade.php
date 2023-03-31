@@ -40,9 +40,9 @@ $posts = [
     <x-container>
         <div class="flex flex-wrap justify-between gap-16 lg:flex-nowrap">
             <div class="w-full lg:w-1/3">
-                <x-text>
-                    <h2>News & Events</h2>
-                    <p>Keep up to date with the latest news, events, and announcements from our team at Halifax Health
+                <x-text class="mb-12">
+                    <h2>Stay connected with the community.</h2>
+                    <p>Read with the latest news, events, and announcements from our team at Halifax Health
                         and our
                         community.</p>
                     <div class="flex items-center gap-6 pt-6 text-base not-prose">
@@ -54,10 +54,12 @@ $posts = [
                             </x-btn>
                         </div>
                     </div>
-
                 </x-text>
-                <h4 class="pt-12 mb-2 text-xs text-slate-500">Popular topics:</h4>
-                <x-tag-list :$tags />
+                <div>
+                    <h4 class="mb-2 text-xs text-slate-500">Popular topics:</h4>
+                    <x-tag-list :$tags />
+                    <x-dev-note>Again, quick access (random for dev)</x-dev-notw>
+                </div>
             </div>
             <div class="w-full lg:w-2/3 xl:w-1/2">
                 <ul>
@@ -72,7 +74,7 @@ $posts = [
                         <x-record-preview :$record>
                             <x-slot name="extra">
                                 <div class="flex justify-between gap-2 text-xs text-slate-500">
-                                    <div>{{ now()->format('F jS Y') }}</div>
+                                    <div>{{ now()->subdays($loop->index * 2)->format('F jS, Y') }}</div>
                                     <ul class="flex gap-1 text-xs">
                                         @foreach (collect($tags)->random(rand(1,3)) as $tag)
                                         @if (!$loop->first)
@@ -85,8 +87,11 @@ $posts = [
                                     </ul>
                                 </div>
                             </x-slot>
-
                         </x-record-preview>
+                        @if ($loop->index == 1)
+                        <x-dev-note>I figure news (blog) and events can be treated the same just tagged differently
+                            –– events could just have an additional block to show the details</x-dev-note>
+                        @endif
                     </li>
                     @endforeach
                 </ul>

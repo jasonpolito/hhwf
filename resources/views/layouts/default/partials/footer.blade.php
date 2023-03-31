@@ -69,7 +69,10 @@ $cols = [
 <div class="py-16 bg-primary">
     <x-container>
         <div class="flex items-center justify-center gap-16">
-            <h3 class="font-serif text-3xl text-white">Ready to schedule an appointment online?</h3>
+            <div>
+                <h3 class="font-serif text-3xl text-white">Ready to schedule an appointment online?</h3>
+                <x-dev-note>Last CTA before footer</x-dev-note>
+            </div>
             <div>
                 <x-btn class="text-white bg-slate-900">
                     Schedule Appointment
@@ -98,10 +101,19 @@ $cols = [
             @endforeach
             <div>
                 <a href="#" style="width: 320px"
-                    class="block mb-16 text-slate-400 hocus:text-slate-300">@include('partials.logo-horizontal', ['text'
+                    class="block mb-12 text-slate-400 hocus:text-slate-300">@include('partials.logo-horizontal', ['text'
                     =>
                     'currentColor', 'icon' => 'currentColor'])</a>
 
+                <h4>Stay Up-to-date</h4>
+                <label class="flex items-center w-full mb-12 border-b group border-slate-400">
+                    <input type="text" placeholder="email@example.com" class="w-full py-4 leading-6 bg-transparent">
+                    <a href="#"
+                        class="flex items-center gap-2 py-4 pl-4 -mx-px text-sm leading-6 text-slate-400 group-focus-within:text-white hocus:text-white">
+                        <span>Subscribe</span>
+                        <x-heroicon-o-paper-airplane class="w-4 h-4 left-px" />
+                    </a>
+                </label>
                 <h4 class="mb-4">Follow Halifax Health</h4>
                 @php
                 $icons = [
@@ -111,7 +123,7 @@ $cols = [
                 'twitter',
                 ]
                 @endphp
-                <ul class="flex gap-4 mb-16">
+                <ul class="flex gap-4">
                     @foreach ($icons as $icon)
                     <li>
                         <a href="#" class="text-slate-400 hocus:text-slate-300">@include("partials.icons.$icon",
@@ -121,15 +133,6 @@ $cols = [
                     </li>
                     @endforeach
                 </ul>
-                <h4 class="mb-4">Stay Up-to-date</h4>
-                <label class="flex items-center w-full border-b group border-slate-400">
-                    <input type="text" placeholder="email@example.com" class="w-full py-4 leading-6 bg-transparent">
-                    <a href="#"
-                        class="flex items-center gap-2 py-4 pl-4 -mx-px text-sm leading-6 text-slate-400 group-focus-within:text-white hocus:text-white">
-                        <span>Subscribe</span>
-                        <x-heroicon-o-paper-airplane class="w-4 h-4 left-px" />
-                    </a>
-                </label>
             </div>
         </div>
     </x-container>

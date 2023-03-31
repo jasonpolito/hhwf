@@ -4,17 +4,22 @@
             <div class="grid grid-cols-3">
                 <div class="col-span-2 bg-primary-900 p-14">
                     <div class="max-w-xl pb-16">
-                        <x-text class="prose-white prose-p:font-thin">
-                            <h3>Our Philosophy</h3>
-                            <p>Halifax Health will ensure that those we serve are treated with courtesy and
-                                respect
-                                in a
-                                safe, compassionate, and professional environment.</p>
-                            <p>Halifax Health will provide exemplary medical, emotional, and spiritual care for
-                                each
-                                of
-                                our patients and their families</p>
-                        </x-text>
+                        <div>
+                            <x-text class="prose-white prose-p:font-thin">
+                                <h3>Our Philosophy</h3>
+                                <p>Halifax Health will ensure that those we serve are treated with courtesy and
+                                    respect
+                                    in a
+                                    safe, compassionate, and professional environment.</p>
+                                <p>Halifax Health will provide exemplary medical, emotional, and spiritual care for
+                                    each
+                                    of
+                                    our patients and their families</p>
+                            </x-text>
+                            <x-dev-note>I know this is important to higher-ups. Some of this copy could use work though
+                            </x-dev-note>
+
+                        </div>
                     </div>
                 </div>
                 <div class="bg-center bg-cover p-14"

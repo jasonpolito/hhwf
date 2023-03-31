@@ -1,36 +1,3 @@
-@php
-$links = [
-'Patient Resources' => [
-'Directions & Parking',
-'Billing Information',
-'Medical Records',
-'Patient Portal',
-'View More',
-],
-'Medical Services' => [
-'Cancer Care',
-'Cardiology',
-'Labor & Delivery',
-'Orthopedics',
-'Plastic Surgery & Aesthetics',
-'View All Services',
-],
-// 'Our Doctors' => [],
-'Find a Location' => [
-'Daytona Beach',
-'Port Orange',
-'Deltona',
-],
-'For Medical Professionals' => [
-'Careers',
-'Residency & Fellowship',
-'Medical Staff Services',
-'Physician Opportunites',
-'Radiograph Program',
-'Referrals',
-],
-];
-@endphp
 <!DOCTYPE html>
 <html lang="en">
 

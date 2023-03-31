@@ -18,13 +18,17 @@ $locs = [
     <x-container>
         <div class="flex flex-wrap justify-between gap-16 lg:flex-nowrap">
             <div class="w-full lg:w-1/3">
-                <x-text>
-                    <h2>Planning a visit to Halifax Health?</h2>
-                    <p>Check our <a href="#">Patient Resources</a> center for patient and visitor guidelines and
-                        trusted health information.</p>
-                    <div class="flex items-center gap-6 pt-6 text-base not-prose">
+                <div>
+                    <div>
+                        <x-text>
+                            <h2>Planning a visit to Halifax Health?</h2>
+                            <p>Check our <a href="#">Patient Resources</a> center for patient and visitor guidelines and
+                                trusted health information.</p>
+                        </x-text>
+                        <x-dev-note>Use "friendly" language to direct vistors, not just titles</x-dev-note>
+                    </div>
+                    <div class="flex items-center gap-6 pt-12 text-base ">
                         <div>
-
                             <x-btn class="text-white bg-primary">
                                 <span>Find a Location</span>
                                 <x-heroicon-o-arrow-long-right class="w-6 h-6 transition group-hover:translate-x-2" />
@@ -32,26 +36,31 @@ $locs = [
                         </div>
                         <a href="#">Visitors Guide</a>
                     </div>
-                </x-text>
+                </div>
+
             </div>
             <div class="w-full lg:w-2/3 xl:w-1/2">
-                <ul>
-                    @foreach ($locs as $name => $info)
-                    @php
-                    $record = [
-                    'title' => $name,
-                    'img' => $info['img']
-                    ]
-                    @endphp
-                    <li>
-                        <x-record-preview :$record>
-                            <x-slot name="extra">
-                                <div class="text-xs text-slate-500">{{ $info['addr'] }}</div>
-                            </x-slot>
-                        </x-record-preview>
-                    </li>
-                    @endforeach
-                </ul>
+                <div>
+                    <ul>
+                        @foreach ($locs as $name => $info)
+                        @php
+                        $record = [
+                        'title' => $name,
+                        'img' => $info['img']
+                        ]
+                        @endphp
+                        <li>
+                            <x-record-preview :$record>
+                                <x-slot name="extra">
+                                    <div class="text-xs text-slate-500">{{ $info['addr'] }}</div>
+                                </x-slot>
+                            </x-record-preview>
+                        </li>
+                        @endforeach
+                    </ul>
+                    <x-dev-note>Main campuses featured w/ address displayed</x-dev-note>
+                </div>
+
             </div>
         </div>
     </x-container>
