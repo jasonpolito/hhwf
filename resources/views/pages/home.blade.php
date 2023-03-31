@@ -12,4 +12,5 @@ $page = (object) [
 @include('pages.home.partials.careers')
 @include('pages.home.partials.services')
 @include('pages.home.partials.philosophy')
+@include('pages.home.partials.blog')
 @endsection

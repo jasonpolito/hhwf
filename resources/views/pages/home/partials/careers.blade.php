@@ -8,8 +8,8 @@
                 </div>
             </a>
             <a href="#" class="row-span-2 p-14 bg-primary-900 group">
-                <x-text class="prose-white prose-p:font-thin">
-                    <h3 class="group-hover:underline">Join Our Talented Team</h3>
+                <x-text class="prose-white prose-p:font-thin ">
+                    <h3 class="group-hover:underline decoration-white/30">Join Our Talented Team</h3>
                     <p>We’re glad you’re here. As a cornerstone of our community, we need strong, compassionate,
                         and
                         talented medical professionals just like you.
@@ -21,7 +21,7 @@
                 </div>
             </a>
             <a href="#" class="flex items-center justify-between gap-16 py-8 text-xl px-14 bg-primary-50 group">
-                <h3 class="group-hover:underline">Not ready to relocate? Learn about HaliFlex</h3>
+                <h3 class="group-hover:underline decoration-slate-300">Not ready to relocate? Learn about HaliFlex</h3>
                 <x-heroicon-o-arrow-long-right
                     class="w-12 h-12 transition group-hover:translate-x-2 group-focus:translate-x-2" />
             </a>

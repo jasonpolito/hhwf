@@ -46,31 +46,27 @@ $services = collect([
 "Wellness & Fitness Center",
 "Wound Care & Hyperbaric Medicine",
 ]);
-// $grouped = $services->groupBy(function($item,$key) {
-// return $item[0]; //treats the name string as an array
-// })
-// ->sortBy(function($item,$key){ //sorts A-Z at the top level
-// return $key;
-// });
 @endphp
 
 
-<div>
+{{-- <div>
     <input type="text" placeholder="Search for services"
-        class="block w-full px-12 py-6 pl-24 text-2xl border rounded-full peer border-slate-300">
+        class="block w-full px-12 py-6 pl-24 text-2xl border rounded-full peer border-slate-500">
     <x-heroicon-o-magnifying-glass
         class="absolute w-12 h-12 pointer-events-none peer-focus:text-primary left-6 top-4 text-slate-300" />
+</div> --}}
+
+<div class="mb-8">
+    <input type="text" placeholder="Search for services"
+        class="block w-full py-6 pl-16 text-2xl font-light bg-transparent border-b focus:outline-none placeholder:text-slate-400 placeholder:font-light peer border-slate-400">
+    <x-heroicon-o-magnifying-glass
+        class="absolute left-0 w-12 h-12 pointer-events-none peer-focus:text-primary top-4 text-slate-300" />
 </div>
 
-<ul class="pt-4 text-xs">
-    @foreach ($services->random(8) as $item)
-    <li class="inline-block mb-2 mr-1">
-        <a href="#"
-            class="block px-3 py-2 bg-transparent border rounded-full hocus:bg-white hocus:text-slate-800 text-slate-500 border-slate-500">{{ $item }}</a>
-    </li>
 
-    @endforeach
-</ul>
+{{-- <h4 class="pt-12 pb-2 mb-4 border-b text-slate-400 border-slate-400">Common searches</h4> --}}
+<h4 class="mb-2 text-xs text-slate-500">Common searches:</h4>
+<x-tag-list :tags="$services->random(8)" />
 
 {{-- 
 <ul class="flex gap-8">

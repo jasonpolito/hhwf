@@ -7,6 +7,7 @@ $cols = [
 'Billing Information',
 'Pay My Bill',
 'Medical Records',
+'Gift Shop',
 'Visitation Policy',
 ],
 'For Medical Professionals' => [
@@ -31,6 +32,9 @@ $cols = [
 'Patient Portal',
 'Price Estimates',
 'Pricing Transparency',
+],
+'For Donations' => [
+'Make a Donation',
 ],
 'In The Media' => [
 'News Articles',
@@ -65,7 +69,7 @@ $cols = [
 <div class="py-16 bg-primary">
     <x-container>
         <div class="flex items-center justify-center gap-16">
-            <h3 class="font-serif text-3xl text-white">Ready to schedule your appointment online?</h3>
+            <h3 class="font-serif text-3xl text-white">Ready to schedule an appointment online?</h3>
             <div>
                 <x-btn class="text-white bg-slate-900">
                     Schedule Appointment
@@ -81,8 +85,8 @@ $cols = [
             @foreach ($cols as $col)
             <div class="w-1/4">
                 @foreach ($col as $title => $links)
-                <h4 class="mb-4">{{ $title }}</h4>
-                <ul class="mb-12 -ml-4">
+                <h4 class="mb-3">{{ $title }}</h4>
+                <ul class="mb-10 -ml-4">
                     @foreach ($links as $link)
                     <li><a href="#"
                             class="inline-block px-4 py-1 text-slate-400 hocus:text-slate-300 hocus:underline">{{ $link }}</a>
@@ -117,16 +121,13 @@ $cols = [
                     </li>
                     @endforeach
                 </ul>
-                <h4 class="mb-4">Newsletter</h4>
-
-                <label class="flex items-center gap-2 p-2 border rounded-full group border-slate-400">
-                    <input type="text" placeholder="email@example.com"
-                        class="w-full px-4 py-2 mr-2 bg-transparent rounded-full left-2">
+                <h4 class="mb-4">Stay Up-to-date</h4>
+                <label class="flex items-center w-full border-b group border-slate-400">
+                    <input type="text" placeholder="email@example.com" class="w-full py-4 leading-6 bg-transparent">
                     <a href="#"
-                        class="px-4 py-2 text-sm border rounded-full group-focus-within:bg-white group-focus-within:text-primary group-focus-within:border-white text-slate-400 w-14 h-14 border-slate-400">
-                        <div class="top-0 left-0 flex flex-col items-center justify-center w-full h-full">
-                            <x-heroicon-o-paper-airplane class="w-8 h-8 left-px" />
-                        </div>
+                        class="flex items-center gap-2 py-4 pl-4 -mx-px text-sm leading-6 text-slate-400 group-focus-within:text-white hocus:text-white">
+                        <span>Subscribe</span>
+                        <x-heroicon-o-paper-airplane class="w-4 h-4 left-px" />
                     </a>
                 </label>
             </div>
@@ -134,4 +135,17 @@ $cols = [
     </x-container>
 </x-section>
 
-<div class="py-12 bg-slate-950"></div>
+<div class="py-8 text-xs bg-slate-950 text-slate-500">
+    <x-container>
+        <div class="flex justify-between">
+            <ul class="leading-5">
+                <li class="mb-1">&copy Copyright 2023 Halifax Health. All Rights Reserved</li>
+            </ul>
+            <ul class="flex gap-2">
+                <li><a href="#" class="hocus:underline hocus:text-slate-300">Privacy Policy</a></li>
+                <li>|</li>
+                <li><a href="#" class="hocus:underline hocus:text-slate-300">Terms of Use</a></li>
+            </ul>
+        </div>
+    </x-container>
+</div>
