@@ -79,7 +79,7 @@ $posts = [
                     'img' => $info['img']
                     ];
                     @endphp
-                    <li>
+                    <li class="mb-12">
                         <x-record-preview :$record>
                             <x-slot name="extra">
                                 <div class="flex justify-between gap-2 text-xs text-slate-500">

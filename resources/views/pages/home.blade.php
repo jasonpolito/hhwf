@@ -20,4 +20,5 @@ $page = (object) [
 {{-- @include('pages.home.partials.philosophy')
 @include('pages.home.partials.blog') --}}
 
+<div class="sm:text-xl"></div>
 @endsection

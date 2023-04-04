@@ -1,4 +1,4 @@
-<x-section>
+<x-section class="hidden md:block">
     <x-container>
         <div class="-mx-12">
             <div class="grid grid-cols-3">

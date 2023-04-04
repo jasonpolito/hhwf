@@ -12,7 +12,9 @@ class RecordPreview extends Component
      * Create a new component instance.
      */
     public function __construct(
-        public $record
+        public $record,
+        public $titleSize = 'xl',
+        public $hideImage = false,
     ) {
         //
     }
