@@ -23,7 +23,7 @@
 <body>
     @include('layouts.default.partials.header')
     @yield('content')
-    @include('layouts.default.partials.footer')
+    @include('layouts.default.partials.footer', ['reverse' => $reverse ?? false])
 </body>
 
 </html>

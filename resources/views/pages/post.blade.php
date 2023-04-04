@@ -4,25 +4,44 @@ $page = (object) [
 ]
 @endphp
 
-@extends('layouts.default')
+@extends('layouts.default', ['reverse' => true])
 
 @section('content')
 
-<x-section>
+<x-section style="padding-bottom: 0">
     <x-container>
+        <div class="flex gap-2 mb-6 -mt-6">
+            <div>{{ now()->format('j F Y') }}</div>
+            <div>•</div>
+            <div>5 min read</div>
+        </div>
         <x-text>
             <h1>Reducing Fall Risk At Home: A Perspective For Cancer Survivors</h1>
         </x-text>
-        <div class="my-8 bg-center bg-cover lg:my-16"
-            style="background-image: url({{ asset('assets/img/cardiac.jpg') }}); padding-top: 33%;"></div>
-
-        <x-cols>
-            <x-col class="w-2/3">
+        <x-cols class="pt-8">
+            <x-col class="md:w-2/3">
                 <x-text>
-                    {{-- <p>If you’re recovering from a heart attack, heart disease or recent surgery, cardiac rehabilitation
-                        may be your next step in the right direction. Cardiac rehab is an outpatient program that’s
-                        customized to fit your needs through a combination of exercise and education.</p> --}}
-
+                    <p>The National Institute on Aging reports that 6 out of every 10 falls occur inside the home.
+                        Having a fall can be troublesome for most, but cancer survivors can have heightened
+                        complications from a fall. </p>
+                </x-text>
+            </x-col>
+        </x-cols>
+        {{-- <div class="flex gap-2 mt-6 mb-4">
+            <div>{{ now()->format('j F Y') }}</div>
+        <div>•</div>
+        <div>12 min read</div>
+        </div> --}}
+    </x-container>
+</x-section>
+<x-hero class="my-12 md:my-16 xl:my-24" :hide-gradient="true" :img="asset('assets/img/cardiac.jpg')">
+    <div class="py-40"></div>
+</x-hero>
+<x-section style="padding-top: 0">
+    <x-container>
+        <x-cols>
+            <x-col class="md:w-2/3">
+                <x-text>
                     <h3><strong>What’s Involved in Cardiac Rehab? </strong></h3>
 
                     <p>We’re committed to a recovery plan that strengthens your heart and changes your life. Our skilled
@@ -100,14 +119,29 @@ $page = (object) [
                     <p>With our expert team of certified nurses, physiologists, counselors and dietitians, you’ll have
                         all the tools you need to recover so you can live your best life.</p>
                 </x-text>
+                <div class="pt-16"></div>
+                <h4 class="mb-2 text-xs text-slate-500">Tagged as:</h4>
+                @php
+                $tags = collect([
+                ['text' => 'News', 'url' => '#'],
+                ['text' => 'Article', 'url' => '#'],
+                ['text' => 'Blog', 'url' => '#'],
+                ['text' => 'Event', 'url' => '#'],
+                ['text' => 'Podcast', 'url' => '#'],
+                ['text' => 'Press Release', 'url' => '#'],
+                ['text' => 'Uncategorized', 'url' => '#'],
+                ['text' => 'Video', 'url' => '#'],
+                ])->shuffle()->random(rand(2,5))->toArray();
+                @endphp
+                <x-tag-list :$tags />
             </x-col>
             <x-col class="w-1/3">
             </x-col>
         </x-cols>
     </x-container>
 </x-section>
-<x-container>
+{{-- <x-container>
     <div class="border-b border-slate-400"></div>
-</x-container>
+</x-container> --}}
 
 @endsection

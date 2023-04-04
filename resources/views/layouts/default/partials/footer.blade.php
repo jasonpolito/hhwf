@@ -1,5 +1,11 @@
+@if (!$reverse && false)
 @include('pages.home.partials.philosophy')
+@endif
 @include('pages.home.partials.blog')
+@if ($reverse || true)
+@include('pages.home.partials.philosophy')
+@endif
+
 
 @php
 $cols = [
