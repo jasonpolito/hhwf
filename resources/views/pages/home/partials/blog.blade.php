@@ -1,6 +1,14 @@
 @php
-$tags = collect(['News', 'Article', 'Blog', 'Event', 'Podcast', 'Press Release', 'Uncategorized',
-'Video'])->shuffle()->toArray();
+$tags = collect([
+['text' => 'News', 'url' => '#'],
+['text' => 'Article', 'url' => '#'],
+['text' => 'Blog', 'url' => '#'],
+['text' => 'Event', 'url' => '#'],
+['text' => 'Podcast', 'url' => '#'],
+['text' => 'Press Release', 'url' => '#'],
+['text' => 'Uncategorized', 'url' => '#'],
+['text' => 'Video', 'url' => '#'],
+])->shuffle()->toArray();
 $posts = [
 'Let\'s talk about colon health!' => [
 'img' => 'holdinghandsjpg.jpeg',
@@ -42,7 +50,7 @@ $posts = [
             <div class="w-full lg:w-1/3">
                 <x-text class="mb-12">
                     <h2>Stay connected with the community.</h2>
-                    <p>Read with the latest news, events, and announcements from our team at Halifax Health
+                    <p>Keep up with the latest news, events, and announcements from our team at Halifax Health
                         and our
                         community.</p>
                     <div class="flex items-center gap-6 pt-6 text-base not-prose">
@@ -67,6 +75,7 @@ $posts = [
                     @php
                     $record = [
                     'title' => $title,
+                    'url' => '/post',
                     'img' => $info['img']
                     ];
                     @endphp
@@ -75,16 +84,21 @@ $posts = [
                             <x-slot name="extra">
                                 <div class="flex justify-between gap-2 text-xs text-slate-500">
                                     <div>{{ now()->subdays($loop->index * 2)->format('F jS, Y') }}</div>
-                                    <ul class="flex gap-1 text-xs">
-                                        @foreach (collect($tags)->random(rand(1,3)) as $tag)
-                                        @if (!$loop->first)
-                                        <li>•</li>
+                                    <div>
+                                        <ul class="flex gap-1 text-xs">
+                                            @foreach (collect($tags)->random(rand(2,4)) as $tag)
+                                            @if (!$loop->first)
+                                            <li>•</li>
+                                            @endif
+                                            <li>
+                                                {{ $tag['text'] }}
+                                            </li>
+                                            @endforeach
+                                        </ul>
+                                        @if ($loop->index == 2)
+                                        <x-dev-note>Tags</x-dev-note>
                                         @endif
-                                        <li>
-                                            {{ $tag }}
-                                        </li>
-                                        @endforeach
-                                    </ul>
+                                    </div>
                                 </div>
                             </x-slot>
                         </x-record-preview>

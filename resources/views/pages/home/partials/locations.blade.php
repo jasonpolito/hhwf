@@ -16,8 +16,9 @@ $locs = [
 @endphp
 <x-section>
     <x-container>
-        <div class="flex flex-wrap justify-between gap-16 lg:flex-nowrap">
-            <div class="w-full lg:w-1/3">
+        <x-cols class="justify-between">
+            <x-col class="lg:w-1/3">
+
                 <div>
                     <div>
                         <x-text>
@@ -38,14 +39,15 @@ $locs = [
                     </div>
                 </div>
 
-            </div>
-            <div class="w-full lg:w-2/3 xl:w-1/2">
+            </x-col>
+            <x-col class="lg:w-2/3 xl:w-1/2">
                 <div>
                     <ul>
                         @foreach ($locs as $name => $info)
                         @php
                         $record = [
                         'title' => $name,
+                        'url' => '/location',
                         'img' => $info['img']
                         ]
                         @endphp
@@ -60,8 +62,7 @@ $locs = [
                     </ul>
                     <x-dev-note>Main campuses featured w/ address displayed</x-dev-note>
                 </div>
-
-            </div>
-        </div>
+            </x-col>
+        </x-cols>
     </x-container>
 </x-section>

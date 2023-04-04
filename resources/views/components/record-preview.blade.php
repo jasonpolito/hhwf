@@ -1,5 +1,5 @@
 <h3>
-    <a href="#" class="flex gap-8 my-12 first:mt-0 group">
+    <a href="{{ $record['url'] ?? '#' }}" class="flex gap-8 my-12 first:mt-0 group">
         <div class="hidden w-1/4 sm:block">
             <div class="overflow-hidden border border-slate-400">
                 <div style="padding-top: 100%; background-image: url({{ asset('assets/img/' . $record['img']) }})"

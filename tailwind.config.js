@@ -15,7 +15,8 @@ module.exports = {
       },
       fontFamily: {
         // serif: 'Noto Serif Display'
-        serif: 'Libre Baskerville'
+        serif: 'Libre Baskerville',
+        // serif: 'Cormorant Garamond',
       },
       typography: ({ theme }) => ({
         white: {

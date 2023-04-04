@@ -1,9 +1,9 @@
 <div class="py-8 border-b border-slate-200">
     <x-container>
         <div class="flex items-center justify-between">
-            <div>
+            <a href="/">
                 <img src="{{ asset('assets/img/hh_logo.png') }}" alt="" class="w-52 sm:w-72">
-            </div>
+            </a>
             <ul class="items-center hidden gap-4 lg:flex">
                 <li>
                     <div>

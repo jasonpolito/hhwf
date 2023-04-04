@@ -1,3 +1,6 @@
+@include('pages.home.partials.philosophy')
+@include('pages.home.partials.blog')
+
 @php
 $cols = [
 [ // col 1

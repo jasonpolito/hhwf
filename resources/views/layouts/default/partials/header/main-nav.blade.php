@@ -53,7 +53,7 @@ $links = [
                             @foreach ($dropdown as $link)
                             <li>
                                 <a href="#"
-                                    class="block px-3 py-1 -mx-3 hocus:bg-primary-50 hocus:underline decoration-slate-400 decoration-1">{{ $link }}</a>
+                                    class="block px-3 py-1 pr-8 -mx-3 hocus:bg-primary-50 hocus:underline decoration-slate-400 decoration-1">{{ $link }}</a>
                             </li>
                             @endforeach
                         </ul>
