@@ -11,6 +11,11 @@ $page = (object) [
 @include('pages.location.partials.masthead')
 @include('pages.location.partials.details')
 @include('partials.services')
+<x-section>
+    <x-container>
+        // doctors
+    </x-container>
+</x-section>
 
 {{-- <x-section>
     <x-container>

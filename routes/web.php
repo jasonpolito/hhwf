@@ -16,4 +16,6 @@ use Illuminate\Support\Facades\Route;
 Route::view('/', 'pages.home');
 Route::view('/location', 'pages.location');
 Route::view('/service', 'pages.service');
+Route::view('/services', 'pages.services');
 Route::view('/post', 'pages.post');
+Route::view('/blog', 'pages.blog');

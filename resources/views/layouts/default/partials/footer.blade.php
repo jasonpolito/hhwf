@@ -1,7 +1,9 @@
 @if (!$reverse && false)
 @include('pages.home.partials.philosophy')
 @endif
-@include('pages.home.partials.blog')
+@if (!in_array('news', $hidden))
+@include('pages.home.partials.news')
+@endif
 @if ($reverse || true)
 @include('pages.home.partials.philosophy')
 @endif

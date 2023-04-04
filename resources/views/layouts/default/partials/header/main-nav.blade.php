@@ -1,37 +1,37 @@
 @php
 $links = [
 'Patients & Visitors' => [
-'Directions & Parking',
-'Billing Information',
-'Medical Records',
-'Patient Portal',
-'View More',
+['text' => 'Directions & Parking', 'url' => '/location'],
+['text' => 'Billing Information', 'url' => '/location'],
+['text' => 'Medical Records', 'url' => '/location'],
+['text' => 'Patient Portal', 'url' => '/location'],
+['text' => 'View More', 'url' => '/location'],
 ],
 'Medical Services' => [
-'Cancer Care',
-'Cardiology',
-'Labor & Delivery',
-'Orthopedics',
-'Plastic Surgery & Aesthetics',
-'View All Services',
+['text' => 'Cancer Care', 'url' => '/service'],
+['text' => 'Cardiology', 'url' => '/service'],
+['text' => 'Labor & Delivery', 'url' => '/service'],
+['text' => 'Orthopedics', 'url' => '/service'],
+['text' => 'Plastic Surgery & Aesthetics', 'url' => '/service'],
+['text' => 'View All Services', 'url' => '/services'],
 ],
 'Find a Location' => [
-'Daytona Beach',
-'Port Orange',
-'Deltona',
+['text' => 'Daytona Beach', 'url' => '/location'],
+['text' => 'Port Orange', 'url' => '/location'],
+['text' => 'Deltona', 'url' => '/location'],
 ],
 'Find a Doctor' => [
-'Daytona Beach',
-'Port Orange',
-'Deltona',
+['text' => 'Daytona Beach', 'url' => '/location'],
+['text' => 'Port Orange', 'url' => '/location'],
+['text' => 'Deltona', 'url' => '/location'],
 ],
 'For Medical Professionals' => [
-'Careers',
-'Residency & Fellowship',
-'Medical Staff Services',
-'Physician Opportunites',
-'Radiograph Program',
-'Referrals',
+['text' => 'Careers', 'url' => '#'],
+['text' => 'Residency & Fellowship', 'url' => '#'],
+['text' => 'Medical Staff Services', 'url' => '#'],
+['text' => 'Physician Opportunites', 'url' => '#'],
+['text' => 'Radiograph Program', 'url' => '#'],
+['text' => 'Referrals', 'url' => '#'],
 ],
 ];
 @endphp
@@ -52,8 +52,8 @@ $links = [
                             class="absolute z-10 min-w-full px-6 pt-2 pb-4 -mt-px -ml-6 bg-white border-b shadow-lg opacity-0 pointer-events-none left-2 hover:pointer-events-auto focus-within:pointer-events-auto peer-hover:pointer-events-auto peer-focus:pointer-events-auto hover:opacity-100 focus-within:opacity-100 peer-hover:opacity-100 peer-focus:opacity-100 whitespace-nowrap border-x border-slate-200 top-full">
                             @foreach ($dropdown as $link)
                             <li>
-                                <a href="#"
-                                    class="block px-3 py-1 pr-8 -mx-3 hocus:bg-primary-50 hocus:underline decoration-slate-400 decoration-1">{{ $link }}</a>
+                                <a href="{{ $link['url'] }}"
+                                    class="block px-3 py-1 pr-8 -mx-3 hocus:bg-primary-50 hocus:underline decoration-slate-400 decoration-1">{{ $link['text'] }}</a>
                             </li>
                             @endforeach
                         </ul>

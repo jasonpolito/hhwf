@@ -21,7 +21,15 @@
                             <p><a href="#">303 N Clyde Morris Blvd, Daytona Beach, FL 32114</a></p>
                             <h4>Phone</h4>
                             <p><a href="#">386.425.4000</a></p>
+                            <h4>Visitors</h4>
+                            <p><a href="#">Schedule Appointment</a></p>
                         </div>
+                        {{-- <div class="flex pt-8">
+                            <x-btn class="text-white bg-primary">
+                                <span>Schedule Appointment</span>
+                                <x-heroicon-o-arrow-long-right class="w-6 h-6 transition group-hover:translate-x-2" />
+                            </x-btn>
+                        </div> --}}
                     </x-col>
                     <x-col class="sm:w-1/2 md:w-full lg:w-1/2">
                         <h3 class="py-4 mb-4 font-serif text-xl border-b border-slate-400">

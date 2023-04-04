@@ -47,20 +47,23 @@ $posts = [
             <div>5 min read</div>
         </div>
         <x-text>
-            <h1>Reducing Fall Risk At Home: A Perspective For Cancer Survivors</h1>
+            <h1>{{ fake()->sentence }}</h1>
+            {{-- <h1>Reducing Fall Risk At Home: A Perspective For Cancer Survivors</h1> --}}
         </x-text>
         <x-cols class="pt-8">
             <x-col class="lg:w-2/3">
                 <x-text>
-                    <p>The National Institute on Aging reports that 6 out of every 10 falls occur inside the home.
+                    <p>{{ fake()->paragraph }}</p>
+                    {{-- <p>The National Institute on Aging reports that 6 out of every 10 falls occur inside the home.
                         Having a fall can be troublesome for most, but cancer survivors can have heightened
-                        complications from a fall. </p>
+                        complications from a fall. </p> --}}
                 </x-text>
             </x-col>
         </x-cols>
     </x-container>
 </x-section>
-<x-hero class="my-12 md:my-16 xl:my-18" :hide-gradient="true" :img="asset('assets/img/cardiac.jpg')">
+<x-hero class="my-12 md:my-16 xl:my-18" :hide-gradient="true"
+    img="https://picsum.photos/seed/{{ rand(10,999) }}/1200/800">
     <div class="sm:py-20 lg:py-32 xl:py-40"></div>
 </x-hero>
 <x-section style="padding-top: 0">
@@ -186,7 +189,7 @@ $posts = [
                         @endforeach
                         <li class="mb-12">
                             <x-record-preview :hide-image="true" :title-size="'base'"
-                                :record="['title' => 'View more']">
+                                :record="['title' => 'View more articles', 'url' => '/blog']">
                             </x-record-preview>
                         </li>
                     </ul>

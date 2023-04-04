@@ -1,3 +1,5 @@
-<div {{ $attributes->merge(['class' => 'w-full px-8']) }}>
+@props(['gap' => '8'])
+
+<div {{ $attributes->merge(['class' => 'w-full ' . "px-$gap"]) }}>
     {{ $slot }}
 </div>

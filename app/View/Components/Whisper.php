@@ -6,18 +6,13 @@ use Closure;
 use Illuminate\Contracts\View\View;
 use Illuminate\View\Component;
 
-class RecordPreview extends Component
+class Whisper extends Component
 {
     /**
      * Create a new component instance.
      */
-    public function __construct(
-        public $record,
-        public $titleSize = 'xl',
-        public $titleMaxLength = 80,
-        public $hideImage = false,
-        public $card = false,
-    ) {
+    public function __construct()
+    {
         //
     }
 
@@ -26,6 +21,6 @@ class RecordPreview extends Component
      */
     public function render(): View|Closure|string
     {
-        return view('components.record-preview');
+        return view('components.whisper');
     }
 }

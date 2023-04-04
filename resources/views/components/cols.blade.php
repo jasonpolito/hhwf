@@ -1,3 +1,5 @@
-<div {{ $attributes->merge(['class' => 'flex flex-wrap -mx-8' ]) }}>
+@props(['gap' => '8'])
+
+<div {{ $attributes->merge(['class' => 'flex flex-wrap ' . "-mx-$gap" ]) }}>
     {{ $slot }}
 </div>
