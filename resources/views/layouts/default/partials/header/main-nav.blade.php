@@ -1,13 +1,20 @@
 @php
 $links = [
-'Patients & Visitors' => [
-['text' => 'Directions & Parking', 'url' => '/location'],
-['text' => 'Billing Information', 'url' => '/location'],
-['text' => 'Medical Records', 'url' => '/location'],
-['text' => 'Patient Portal', 'url' => '/location'],
-['text' => 'View More', 'url' => '/location'],
+[
+'text' => 'Patients & Visitors',
+'url' => '#',
+'items' => [
+['text' => 'Directions & Parking', 'url' => route('pages.locations.show')],
+['text' => 'Billing Information', 'url' => route('pages.locations.show')],
+['text' => 'Medical Records', 'url' => route('pages.locations.show')],
+['text' => 'Patient Portal', 'url' => route('pages.locations.show')],
+['text' => 'View More', 'url' => route('pages.locations.show')],
 ],
-'Medical Services' => [
+],
+[
+'text' => 'Medical Services',
+'url' => '#',
+'items' => [
 ['text' => 'Cancer Care', 'url' => '/service'],
 ['text' => 'Cardiology', 'url' => '/service'],
 ['text' => 'Labor & Delivery', 'url' => '/service'],
@@ -15,23 +22,36 @@ $links = [
 ['text' => 'Plastic Surgery & Aesthetics', 'url' => '/service'],
 ['text' => 'View All Services', 'url' => '/services'],
 ],
-'Find a Location' => [
-['text' => 'Daytona Beach', 'url' => '/location'],
-['text' => 'Port Orange', 'url' => '/location'],
-['text' => 'Deltona', 'url' => '/location'],
 ],
-'Find a Doctor' => [
-['text' => 'Daytona Beach', 'url' => '/location'],
-['text' => 'Port Orange', 'url' => '/location'],
-['text' => 'Deltona', 'url' => '/location'],
+[
+'text' => 'Find a Location',
+'url' => route('pages.locations.index'),
+'items' => [
+['text' => 'Daytona Beach', 'url' => route('pages.locations.show')],
+['text' => 'Port Orange', 'url' => route('pages.locations.show')],
+['text' => 'Deltona', 'url' => route('pages.locations.show')],
 ],
-'For Medical Professionals' => [
-['text' => 'Careers', 'url' => '#'],
+],
+[
+'text' => 'Find a Doctor',
+'url' => '#',
+'items' => [
+['text' => 'Daytona Beach', 'url' => route('pages.locations.show')],
+['text' => 'Port Orange', 'url' => route('pages.locations.show')],
+['text' => 'Deltona', 'url' => route('pages.locations.show')],
+],
+],
+[
+'text' => 'For Medical Professionals',
+'url' => '#',
+'items' => [
+// ['text' => 'Careers', 'url' => '#'],
 ['text' => 'Residency & Fellowship', 'url' => '#'],
 ['text' => 'Medical Staff Services', 'url' => '#'],
 ['text' => 'Physician Opportunites', 'url' => '#'],
 ['text' => 'Radiograph Program', 'url' => '#'],
 ['text' => 'Referrals', 'url' => '#'],
+],
 ],
 ];
 @endphp
@@ -40,17 +60,17 @@ $links = [
     <x-container>
         <div>
             <ul class="flex justify-between gap-4">
-                @foreach ($links as $link => $dropdown)
+                @foreach ($links as $menu)
                 <li>
                     <div class="-mx-2 group">
-                        <a href="#" class="flex items-center gap-3 px-2 py-4 peer group">
-                            <span>{{ $link }}</span>
+                        <a href="{{ $menu['url'] ?? '#' }}" class="flex items-center gap-3 px-2 py-4 peer group">
+                            <span>{{ $menu['text'] }}</span>
                             <x-heroicon-o-chevron-down
                                 class="w-6 h-6 transition text-slate-300 group-hover:text-slate-500 group-focus-within:text-primary-500 group-hover:rotate-180 group-focus-within:rotate-180" />
                         </a>
                         <ul
                             class="absolute z-10 min-w-full px-6 pt-2 pb-4 -mt-px -ml-6 bg-white border-b shadow-lg opacity-0 pointer-events-none left-2 hover:pointer-events-auto focus-within:pointer-events-auto peer-hover:pointer-events-auto peer-focus:pointer-events-auto hover:opacity-100 focus-within:opacity-100 peer-hover:opacity-100 peer-focus:opacity-100 whitespace-nowrap border-x border-slate-200 top-full">
-                            @foreach ($dropdown as $link)
+                            @foreach ($menu['items'] as $link)
                             <li>
                                 <a href="{{ $link['url'] }}"
                                     class="block px-3 py-1 pr-8 -mx-3 hocus:bg-primary-50 hocus:underline decoration-slate-400 decoration-1">{{ $link['text'] }}</a>

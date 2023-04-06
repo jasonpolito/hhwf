@@ -14,6 +14,8 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::view('/', 'pages.home');
+Route::view('/locations', 'pages.locations.index')->name('pages.locations.index');
+Route::view('/locations/show', 'pages.locations.show')->name('pages.locations.show');
 Route::view('/location', 'pages.location');
 Route::view('/service', 'pages.service');
 Route::view('/services', 'pages.services');

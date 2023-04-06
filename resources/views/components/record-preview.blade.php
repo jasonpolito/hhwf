@@ -1,4 +1,3 @@
-@if (!$card)
 <h3>
     <a href="{{ $record['url'] ?? '#' }}" class="flex gap-8 first:mt-0 group">
         @if (!$hideImage)
@@ -23,4 +22,3 @@
         </div>
     </a>
 </h3>
-@endif

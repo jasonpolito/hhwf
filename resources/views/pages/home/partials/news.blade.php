@@ -1,55 +1,9 @@
-@php
-$tags = collect([
-['text' => 'News', 'url' => '#'],
-['text' => 'Article', 'url' => '#'],
-['text' => 'Blog', 'url' => '#'],
-['text' => 'Event', 'url' => '#'],
-['text' => 'Podcast', 'url' => '#'],
-['text' => 'Press Release', 'url' => '#'],
-['text' => 'Uncategorized', 'url' => '#'],
-['text' => 'Video', 'url' => '#'],
-])->shuffle()->toArray();
-$posts = [
-'Let\'s talk about colon health!' => [
-'img' => 'holdinghandsjpg.jpeg',
-'tags' => [
-'Podcast',
-'Press Release'
-],
-],
-'Halifax Health | Brooks Rehabilitation Community Programs' => [
-'img' => 'kayak.jpg',
-'tags' => [
-'Podcast',
-'Press Release'
-]
-],
-'Andrea Forster Named First Diabetes Navigator' => [
-'img' => 'andrea.jpg',
-'tags' => [
-'Podcast',
-'Press Release'
-]
-],
-'Halifax Health – Hospice to Host 4th Annual Rick Zimmer Jr. Memorial Golf Tournament to Benefit Traumatic Loss Program'
-=> [
-'img' => 'golf.jpg',
-'tags' => [
-'Podcast',
-'Press Release'
-]
-]
-]
-@endphp
-
-
 <x-section class="bg-primary-50">
-    {{-- <x-section class="border-t border-slate-300"> --}}
     <x-container>
-        <div class="flex flex-wrap justify-between gap-16 lg:flex-nowrap">
-            <div class="w-full lg:w-1/3">
+        <x-cols class="justify-between" :$gap>
+            <x-col class="lg:w-1/2" :$gap>
                 <x-text class="mb-12">
-                    <h2>Stay connected with the community.</h2>
+                    <h2>Stay connected with<br>the community.</h2>
                     <p>Keep up with the latest news, events, and announcements from our team at Halifax Health
                         and our
                         community.</p>
@@ -68,48 +22,10 @@ $posts = [
                     <x-tag-list :$tags />
                     <x-dev-note>Again, quick access (random for dev)</x-dev-notw>
                 </div>
-            </div>
-            <div class="w-full lg:w-2/3 xl:w-1/2">
-                <ul>
-                    @foreach ($posts as $title => $info)
-                    @php
-                    $record = [
-                    'title' => $title,
-                    'url' => '/post',
-                    'img' => $info['img']
-                    ];
-                    @endphp
-                    <li class="mb-12">
-                        <x-record-preview :$record>
-                            <x-slot name="extra">
-                                <div class="flex justify-between gap-2 text-xs text-slate-500">
-                                    <div>{{ now()->subdays($loop->index * 2)->format('F jS, Y') }}</div>
-                                    <div>
-                                        <ul class="flex gap-1 text-xs">
-                                            @foreach (collect($tags)->random(rand(2,4)) as $tag)
-                                            @if (!$loop->first)
-                                            <li>•</li>
-                                            @endif
-                                            <li>
-                                                {{ $tag['text'] }}
-                                            </li>
-                                            @endforeach
-                                        </ul>
-                                        @if ($loop->index == 2)
-                                        <x-dev-note>Tags</x-dev-note>
-                                        @endif
-                                    </div>
-                                </div>
-                            </x-slot>
-                        </x-record-preview>
-                        @if ($loop->index == 1)
-                        <x-dev-note>I figure news (blog) and events can be treated the same just tagged differently
-                            –– events could just have an additional block to show the details</x-dev-note>
-                        @endif
-                    </li>
-                    @endforeach
-                </ul>
-            </div>
-        </div>
+            </x-col>
+            <x-col class="lg:w-1/2" :$gap>
+                <x-post-card-list :records="$posts->shuffle()->random(3)" />
+            </x-col>
+        </x-cols>
     </x-container>
 </x-section>

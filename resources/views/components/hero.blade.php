@@ -1,6 +1,6 @@
 <div {{ $attributes->merge(['class' => '']) }}>
-    <div class="xl:container xl:mx-auto 2xl:px-32 max-w-7xl">
-        <div class="pt-24 bg-center bg-cover bg-primary-50 lg:-mx-12"
+    <div class="xl:container xl:mx-auto 2xl:px-32">
+        <div class="pt-24 bg-center bg-cover bg-primary-50"
             style="background-image: url({{ $attributes['img'] ?? '' }})">
             @if ($leftGradient)
             <div class="fill-parent bg-gradient-to-l from-transparent to-primary-900"></div>

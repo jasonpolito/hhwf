@@ -22,7 +22,8 @@
             </a>
             <a href="#" class="py-8 text-xl px-14 bg-primary-50 group">
                 <div class="flex items-center justify-between gap-16 ">
-                    <h3 class="group-hover:underline decoration-slate-300">Not ready to relocate? Learn about HaliFlex
+                    <h3 class="group-hover:underline decoration-slate-300">Learn about our flexible seasonal jobs
+                        program.
                     </h3>
                     <x-heroicon-o-arrow-long-right
                         class="w-12 h-12 transition group-hover:translate-x-2 group-focus:translate-x-2" />

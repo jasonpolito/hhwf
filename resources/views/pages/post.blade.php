@@ -1,38 +1,7 @@
 @php
 $page = (object) [
 'meta_title' => 'Halifax Health Wireframes - Single Post'
-];
-$posts = [
-// 'Let\'s talk about colon health!' => [
-// 'img' => 'holdinghandsjpg.jpeg',
-// 'tags' => [
-// 'Podcast',
-// 'Press Release'
-// ],
-// ],
-'Halifax Health | Brooks Rehabilitation Community Programs' => [
-'img' => 'kayak.jpg',
-'tags' => [
-'Podcast',
-'Press Release'
-]
-],
-'Andrea Forster Named First Diabetes Navigator' => [
-'img' => 'andrea.jpg',
-'tags' => [
-'Podcast',
-'Press Release'
-]
-],
-'Halifax Health – Hospice to Host 4th Annual Rick Zimmer Jr. Memorial Golf Tournament to Benefit Traumatic Loss Program'
-=> [
-'img' => 'golf.jpg',
-'tags' => [
-'Podcast',
-'Press Release'
-]
-]
-];
+];;
 @endphp
 
 @extends('layouts.default', ['reverse' => true])
@@ -41,29 +10,32 @@ $posts = [
 
 <x-section style="padding-bottom: 0">
     <x-container>
-        <div class="flex gap-2 mb-6 md:-mt-6">
-            <div>{{ now()->format('F jS, Y') }}</div>
-            <div>•</div>
-            <div>5 min read</div>
-        </div>
-        <x-text>
-            <h1>{{ fake()->sentence }}</h1>
-            {{-- <h1>Reducing Fall Risk At Home: A Perspective For Cancer Survivors</h1> --}}
-        </x-text>
-        <x-cols class="pt-8">
-            <x-col class="lg:w-2/3">
+        <x-cols>
+            <x-col>
+                <div class="flex gap-2 mb-6 md:-mt-6">
+                    <div>{{ now()->format('F jS, Y') }}</div>
+                    <div>•</div>
+                    <div>5 min read</div>
+                </div>
                 <x-text>
-                    <p>{{ fake()->paragraph }}</p>
-                    {{-- <p>The National Institute on Aging reports that 6 out of every 10 falls occur inside the home.
-                        Having a fall can be troublesome for most, but cancer survivors can have heightened
-                        complications from a fall. </p> --}}
+                    {{-- <h1>{{ fake()->sentence }}</h1> --}}
+                    <h1>Volusia County Hosts Largest Ever American Diabetes Association State of Diabetes Conference
+                    </h1>
+                </x-text>
+            </x-col>
+            <x-col class="pt-8 lg:w-2/3">
+                <x-text>
+                    {{-- <p>{{ fake()->paragraph }}</p> --}}
+                    <p>The largest State of Diabetes the American Diabetes Association has ever held in the United
+                        States took place in Volusia County. This year’s event held at
+                        the
+                        Ocean Center had over 500 attendees, 25 vendors and 12 guest speakers. </p>
                 </x-text>
             </x-col>
         </x-cols>
     </x-container>
 </x-section>
-<x-hero class="my-12 md:my-16 xl:my-18" :hide-gradient="true"
-    img="https://picsum.photos/seed/{{ rand(10,999) }}/1200/800">
+<x-hero class="my-12 md:my-16 xl:my-18" :hide-gradient="true" img="{{ asset('assets/img/postimage.jpg') }}">
     <div class="sm:py-20 lg:py-32 xl:py-40"></div>
 </x-hero>
 <x-section style="padding-top: 0">
@@ -71,110 +43,71 @@ $posts = [
         <x-cols class="justify-between">
             <x-col class="lg:w-2/3">
                 <x-text>
-                    <p>If you’re recovering from a heart attack, heart disease or recent surgery, cardiac rehabilitation
-                        may be your next step in the right direction. Cardiac rehab is an outpatient program that’s
-                        customized to fit your needs through a combination of exercise and education.</p>
-                    <h3><strong>What’s Involved in Cardiac Rehab? </strong></h3>
-
-                    <p>We’re committed to a recovery plan that strengthens your heart and changes your life. Our skilled
-                        specialists provide ongoing support through heart disease education, customized exercise plans
-                        and one-on-one and group counseling.</p>
-
-                    <p>When you begin <a href="#">cardiac rehab</a>, we’ll help you
-                        establish a plan that’s tailored to your lifestyle. We’ll help you regain strength, provide
-                        preventive care, reduce your risk of heart health issues in the future and improve your overall
-                        quality of life.</p>
-
-
-                    <p>You’ll also receive lifestyle education and support, such as teaching you how to follow a
-                        heart-healthy diet and supporting you to successfully quit smoking, if need be. If you have <a
-                            href="#">high blood pressure, diabetes</a> or
-                        high cholesterol, your team of experts will also provide guidance on how to best manage and
-                        treat these conditions.</p>
-
-                    <img src="{{ asset('assets/img/doc1.jpg') }}" alt="">
-
-                    <p>Along with a serious medical condition or recent surgery may also come mixed emotions, anxiety or
-                        depression. With cardiac rehab, you’ll also receive counseling support to check in on your <a
-                            href="#">mental health</a> and help you get back
-                        to feeling your best.</p>
-
-                    <p> </p>
-
-                    <h3><strong>Who Needs Cardiac Rehab?</strong></h3>
-
-                    <p>Cardiac rehab is a long-term program that varies for each person. Some people may see results
-                        sooner than others, and that’s perfectly OK. Our goal at the program’s completion is to see you
-                        gain the tools and education you need to lead a happy, healthy lifestyle.</p>
-
-                    <p>Several factors determine if you’re a good fit for cardiac rehabilitation, such as:</p>
-
+                    <p>The American Diabetes Association State of Diabetes is a community event that features panel of
+                        experts who lead a discussion on patient education related to diabetes management, prevention
+                        and overall health and wellness. The event also included free eye screenings, flu shots and an
+                        expert to help attendees know their health numbers and risks which could keep them from living
+                        life to the fullest. Presenting sponsors included The Lohman Center for Diabetes and
+                        Endocrinology at Halifax Health and Lowell & Nancy Lohman. Premier sponsors included Bank of
+                        America, Walgreens, Florida Blue, Florida Retina Institute, Sanofi, and Novo Nordisk.</p>
+                    <h3>Take-aways</h3>
+                    <p>“There were so many amazing take-aways,” said John Guthrie. “Our keynote Presenter Chris Ruden, a
+                        world record holding powerlifter who was born with a birth defect and later diagnosed with type
+                        1 diabetes, shared his message of thriving with diabetes by overcoming adversity by practicing
+                        mastering change management. I think attendees left with a fresh perspective on the choices we
+                        can make based on the situations we experience.” </p>
+                    <blockquote>“This was an opportunity for community members and caregivers from across central
+                        Florida to get
+                        together for the latest news on treatments and technology for diabetes. The Volusia County
+                        community came together to be proactive and lead the fight against diabetes. The ADA is pleased
+                        to host this annual event in Volusia County with Halifax Health and the Lohman Center for
+                        Diabetes and Endocrinology” – Mica Lill.</blockquote>
+                    <p>Program presenters covered all aspects of diabetes care including audiology, neuropathy, oral
+                        health, would care, eye care and cardiovascular care. New diabetes technology including insulin
+                        pumps and continuous glucose monitoring devices as well as basic diabetes care and nutrient
+                        basics were including in the all-day conference as well as a focus on mind, body, and spirit.
+                    </p>
+                    <h3>The Lohman Diabetes Center</h3>
+                    <p>The Lohmans presented the American Diabetes Association with a $100,000 donation at the
+                        conference. “November is national diabetes awareness month,” said Lowell Lohman, who plans to
+                        continue his and his wife Nancy’s efforts to help those with Diabetes receive clinical care and
+                        educational support. “Our vision for The Lohman Center for Diabetes includes endocrinology
+                        clinical care, nutrition and education and community outreach,” Nancy Lohman added. </p>
+                    <p>This was the third conference The Lohman Diabetes Center has held for the benefit of all
+                        community members. Since its founding the Lohman Center for Diabetes and Endocrinology at
+                        Halifax Health has been responsible for seeing over 1,200 patients diagnosed with diabetes,
+                        providing diabetes education classes and supported community outreach. The center is growing
+                        with the need and plans to add a Nurse Navigator, Advanced Practice Registered Nurse and a
+                        second endocrinologist.</p>
+                    <p>According to Lowell Lohman, “We poked the 800 pound gorilla (Halifax Health) and they are working
+                        with us to help as many people with diabetes as we can.”</p>
+                    <p>For information about diabetes and the Lohman Center for Diabetes and Endocrinology:</p>
+                    <p><strong>Call – 386.425.DIAB, or visit them on the web at halifaxhealth.org/diabetes</strong></p>
                     <ul>
-                        <li>You had a <a href="#">heart attack</a> within the past
-                            year</li>
-                        <li>You’ve had heart surgery</li>
-                        <li>You have angina</li>
-                        <li>You have chronic stable heart failure (CHF) with an ejection fraction (EF) of less than 36%
-                        </li>
-                        <li>You’ve been diagnosed with heart disease and have a prescription for cardiac rehab from your
-                            physician</li>
-                        <li>You’ve had an angioplasty with or without a stent</li>
+                        <li>Mica Lill, Executive Director, Florida – American Diabetes Association</li>
+                        <li>Mobile: 386-405-9889, MLill@diabetes.org</li>
                     </ul>
-                    <p> </p>
-
-                    <h3><strong>Learn More About Cardiac Rehab</strong></h3>
-
-                    <p>If you think you could benefit from cardiac rehab, <a href="/service">visit us here</a> to learn
-                        more about
-                        our cardiovascular care. We’ll work with you to monitor your physical improvements and numbers
-                        like blood pressure, heart rhythm, and pulse and exertion levels. We’ll also provide solid
-                        support with access to small-group discussions and more. </p>
-
-                    <p>With our expert team of certified nurses, physiologists, counselors and dietitians, you’ll have
-                        all the tools you need to recover so you can live your best life.</p>
+                    <ul>
+                        <li>John Guthrie, Vice President Communications – Halifax Health</li>
+                        <li>Mobile: 386-233-5768, john.guthrie@halifax.org</li>
+                    </ul>
                 </x-text>
+                <div class="flex pt-8">
+                    <x-btn class="text-white bg-primary" url="/service">
+                        <span>Learn more about Diabetes</span>
+                        <x-heroicon-o-arrow-long-right class="w-6 h-6 transition group-hover:translate-x-2" />
+                    </x-btn>
+                </div>
                 <div class="py-16">
                     <h4 class="mb-2 text-xs text-slate-500">Tagged as:</h4>
-                    @php
-                    $tags = collect([
-                    ['text' => 'News', 'url' => '#'],
-                    ['text' => 'Article', 'url' => '#'],
-                    ['text' => 'Blog', 'url' => '#'],
-                    ['text' => 'Event', 'url' => '#'],
-                    ['text' => 'Podcast', 'url' => '#'],
-                    ['text' => 'Press Release', 'url' => '#'],
-                    ['text' => 'Uncategorized', 'url' => '#'],
-                    ['text' => 'Video', 'url' => '#'],
-                    ])->shuffle()->random(rand(2,5))->toArray();
-                    @endphp
-                    <x-tag-list :$tags />
+                    <x-tag-list :tags="$tags->random(rand(2,5))" />
                 </div>
             </x-col>
             <x-col class="lg:w-1/3">
                 <div class="sticky top-0 pt-8 -mt-8">
                     <h4 class="pt-3 text-xs text-slate-500">Related content:</h4>
                     <ul>
-                        @foreach ($posts as $title => $info)
-                        @php
-                        $tags = collect([
-                        ['text' => 'News', 'url' => '#'],
-                        ['text' => 'Article', 'url' => '#'],
-                        ['text' => 'Blog', 'url' => '#'],
-                        ['text' => 'Event', 'url' => '#'],
-                        ['text' => 'Podcast', 'url' => '#'],
-                        ['text' => 'Press Release', 'url' => '#'],
-                        ['text' => 'Uncategorized', 'url' => '#'],
-                        ['text' => 'Video', 'url' => '#'],
-                        ])->shuffle()->toArray();
-                        @endphp
-
-                        @php
-                        $record = [
-                        'title' => $title,
-                        'url' => '/post',
-                        'img' => $info['img']
-                        ];
-                        @endphp
+                        @foreach ($posts as $record)
                         <li class="my-8">
                             <x-record-preview :$record :hide-image="true" :title-size="'base'">
                                 <x-slot name="extra">

@@ -4,15 +4,15 @@
             <div class="flex gap-2 mb-6 -mt-6 text-white decoration-1">
                 <div><a href="#" class="opacity-50 hover:opacity-100 hover:underline">Services</a></div>
                 <div class="opacity-50">•</div>
-                <div><a href="#" class="hover:underline">Primary Care</a></div>
+                <div><a href="#" class="hover:underline">Diabetes Prevention & Care</a></div>
             </div>
             <x-text class="prose-p:font-light prose-white prose-headings:leading-tight">
                 <h1>
-                    For all stages of life.
+                    Knowledge is power.
                 </h1>
-                <p>From sports injuries to physicals, common colds and preventive medicine, we have your family’s
-                    healthcare needs covered, all in a caring environment by professionals who make your health a
-                    priority.</p>
+                <p>According to the Centers for Disease Control and Prevention, there are 30.3 million people who have
+                    diabetes and 84.1 million who have pre-diabetes in the United States. These numbers are rapidly
+                    increasing.</p>
             </x-text>
             {{-- <div class="flex gap-2 mb-6 -mt-6 text-white decoration-1">
                 <div><a href="#" class="opacity-50 hover:opacity-100 hover:underline">Services</a></div>
