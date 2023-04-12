@@ -8,12 +8,12 @@ $gutter = 3;
 @extends('layouts.default')
 
 @section('content')
-<x-hero :img="asset('assets/img/portorange.jpg')">
+<x-hero :img="asset('assets/img/happynurse.webp')">
     <x-cols class="items-center" :$gutter>
         <x-col class="-mt-2 xl:w-1/2" :$gutter>
             <x-text class="prose-p:font-light prose-white prose-headings:leading-tight">
                 <h1>
-                    Find A Location
+                    Find A Doctor
                 </h1>
             </x-text>
         </x-col>
@@ -29,23 +29,6 @@ $gutter = 3;
     </x-cols>
 </x-hero>
 <x-section style="padding-top: 0;">
-    <x-container class="pt-16">
-        <x-cols :$gutter>
-            <x-col class="lg:w-1/4" :$gutter>
-                <div class="pr-8 text-sm">
-                    @include('pages.locations.partials.filter-pills')
-                </div>
-            </x-col>
-            <x-col class="lg:w-3/4" :$gutter>
-                <x-whisper class="pb-2 border-b border-slate-400"><strong>73</strong> locations match your search
-                    criteria</x-whisper>
-                @include('pages.locations.partials.grid')
-                {{-- @include('pages.locations.partials.list') --}}
-                @include('partials.pagination')
-
-            </x-col>
-        </x-cols>
-
-    </x-container>
+    <x-container class="pt-16">@include('pages.doctors.partials.search')</x-container>
 </x-section>
 @endsection

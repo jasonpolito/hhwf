@@ -2,7 +2,7 @@
 $links = [
 [
 'text' => 'Patients & Visitors',
-'url' => '#',
+'url' => route("pages.locations.index"),
 'items' => [
 ['text' => 'Directions & Parking', 'url' => route('pages.locations.show')],
 ['text' => 'Billing Information', 'url' => route('pages.locations.show')],
@@ -13,13 +13,13 @@ $links = [
 ],
 [
 'text' => 'Medical Services',
-'url' => '#',
+'url' => route('pages.services.index'),
 'items' => [
-['text' => 'Cancer Care', 'url' => '/service'],
-['text' => 'Cardiology', 'url' => '/service'],
-['text' => 'Labor & Delivery', 'url' => '/service'],
-['text' => 'Orthopedics', 'url' => '/service'],
-['text' => 'Plastic Surgery & Aesthetics', 'url' => '/service'],
+['text' => 'Cancer Care', 'url' => route('pages.services.show')],
+['text' => 'Cardiology', 'url' => route('pages.services.show')],
+['text' => 'Labor & Delivery', 'url' => route('pages.services.show')],
+['text' => 'Orthopedics', 'url' => route('pages.services.show')],
+['text' => 'Plastic Surgery & Aesthetics', 'url' => route('pages.services.show')],
 ['text' => 'View All Services', 'url' => '/services'],
 ],
 ],
@@ -28,13 +28,13 @@ $links = [
 'url' => route('pages.locations.index'),
 'items' => [
 ['text' => 'Daytona Beach', 'url' => route('pages.locations.show')],
-['text' => 'Port Orange', 'url' => route('pages.locations.show')],
-['text' => 'Deltona', 'url' => route('pages.locations.show')],
+['text' => 'Port Orange', 'url' => route('pages.locations.show', ['l' => 1])],
+['text' => 'Deltona', 'url' => route('pages.locations.show', ['l' => 2])],
 ],
 ],
 [
 'text' => 'Find a Doctor',
-'url' => '#',
+'url' => route('pages.doctors.index'),
 'items' => [
 ['text' => 'Daytona Beach', 'url' => route('pages.locations.show')],
 ['text' => 'Port Orange', 'url' => route('pages.locations.show')],

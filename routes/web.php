@@ -13,11 +13,16 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
+$pages = [
+    'locations',
+    'services',
+    'doctors',
+    'blog',
+];
+
 Route::view('/', 'pages.home');
-Route::view('/locations', 'pages.locations.index')->name('pages.locations.index');
-Route::view('/locations/show', 'pages.locations.show')->name('pages.locations.show');
-Route::view('/location', 'pages.location');
-Route::view('/service', 'pages.service');
-Route::view('/services', 'pages.services');
-Route::view('/post', 'pages.post');
-Route::view('/blog', 'pages.blog');
+
+foreach ($pages as $page) {
+    Route::view("/$page", "pages.$page.index")->name("pages.$page.index");
+    Route::view("/$page/show", "pages.$page.show")->name("pages.$page.show");
+}

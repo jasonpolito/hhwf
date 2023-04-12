@@ -7,8 +7,9 @@
                 class="w-6 h-6 border appearance-none group-hover:border-primary checked:bg-primary peer checked:border-primary border-slate-400">
             <div
                 class="items-center justify-center hidden text-white pointer-events-none fill-parent peer-checked:flex">
-                <x-heroicon-o-check style="stroke-width: 5; stroke-linecap: butt"
-                    class="top-0 w-4 h-4 -top-[0.35rem]" />
+                <div
+                    class="absolute w-[35%] h-[85%] transform rotate-[40deg] top-[-0.45rem] border-b-[0.2rem] border-r-[0.2rem] border-white">
+                </div>
             </div>
         </span>
     </span>

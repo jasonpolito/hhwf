@@ -42,26 +42,27 @@ class AppServiceProvider extends ServiceProvider
                 ['text' => 'Ormond Beach'],
                 ['text' => 'Deltona'],
             ]))
+                ->with('doctors', collect(config('halifax.doctors')))
                 ->with('posts', collect([
                     [
                         'title' => 'Let\'s talk about colon health!',
                         'excerpt' => 'Every March National Colorectal Cancer Awareness Month spotlights this disease and inspires more people to get checked starting at the age of 45.',
-                        'url' => '/post',
+                        'url' => route('pages.blog.show'),
                         'img' => 'holdinghandsjpg.jpeg',
                     ], [
                         'title' => 'Halifax Health | Brooks Rehabilitation Community Programs',
                         'excerpt' => 'A variety of activities are located throughout Volusia and Flagler counties and are open to everyone in the community.',
-                        'url' => '/post',
+                        'url' => route('pages.blog.show'),
                         'img' => 'kayak.jpg',
                     ], [
                         'title' => 'Andrea Forster Named First Diabetes Navigator',
                         'excerpt' => 'The Lohman Diabetes Center for Diabetes and Endocrinology at Halifax Health is proud to announce Andrea Forster has joined as a Diabetes Navigator.',
-                        'url' => '/post',
+                        'url' => route('pages.blog.show'),
                         'img' => 'andrea.jpg',
                     ], [
                         'title' => 'Halifax Health – Hospice to Host 4th Annual Rick Zimmer Jr. Memorial Golf Tournament to Benefit Traumatic Loss Program',
                         'excerpt' => 'Hospice will be hosting the 4th Annual Rick Zimmer Jr. Memorial Golf tournament on Saturday, May 6, at Cypress Head Golf Club in Port Orange.',
-                        'url' => '/post',
+                        'url' => route('pages.blog.show'),
                         'img' => 'golf.jpg',
                     ]
                 ]))
@@ -118,24 +119,27 @@ class AppServiceProvider extends ServiceProvider
                         'whisper' => '',
                         'url' => '/locations/show',
                         'img' => 'daytona.jpg',
-                        'addr' => '201 N Clyde Morris Blvd. Suite 110 Daytona Beach, FL 32114',
-                        'excerpt' => '201 N Clyde Morris Blvd. Suite 110 Daytona Beach, FL 32114',
+                        'addr' => '201 N Clyde Morris Blvd Suite 110<br>Daytona Beach, FL 32114',
+                        'excerpt' => 'Halifax Health Medical Center of Daytona Beach is a 563-bed hospital. All major
+                        medical and surgical services are available.
+                        The 24-hours emergency department (ED) includes the area’s only Level II Trauma
+                        Center.',
                     ],
                     [
                         'title' => 'Halifax Health – Medical Center of Port Orange',
                         'whisper' => '',
                         'url' => '/locations/show',
                         'img' => 'portorange.jpg',
-                        'addr' => '1185 Dunlawton Ave. Suite 105 Port Orange, FL 32127',
-                        'excerpt' => '1185 Dunlawton Ave. Suite 105 Port Orange, FL 32127',
+                        'addr' => '1185 Dunlawton Ave Suite 105<br>Port Orange, FL 32127',
+                        'excerpt' => 'Voted the area’s most preferred emergency department, Halifax Health – Medical Center of Port Orange is open 24 hours a day, seven days a week, providing a seamless care transition with access to over 500 physicians and 56 specialties to meet all of your healthcare needs.',
                     ],
                     [
                         'title' => 'Halifax Health | UF Health – Medical Center of Deltona',
                         'whisper' => '',
                         'url' => '/locations/show',
                         'img' => 'deltona.jpg',
-                        'addr' => '3400 Halifax Crossings Blvd., Suite 140 Deltona, FL 32725',
-                        'excerpt' => '3400 Halifax Crossings Blvd., Suite 140 Deltona, FL 32725',
+                        'addr' => '3400 Halifax Crossings Blvd Suite 140<br>Deltona, FL 32725',
+                        'excerpt' => 'Long recognized for innovation and excellence, Halifax Health is one of the nation’s leading healthcare centers. Halifax Health includes the largest and most comprehensive medical center on Central Florida’s East Coast and is recognized nationally by National Research Corporation for its programs, outcomes and consumer satisfaction.',
                     ],
                 ]));
         });

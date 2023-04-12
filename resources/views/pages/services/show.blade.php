@@ -1,14 +1,14 @@
 @php
 $page = (object) [
 'meta_title' => 'Halifax Health Wireframes - Single Service'
-]
+];
+$gutter = 3;
 @endphp
 
 @extends('layouts.default')
-
 @section('content')
-
-@include('pages.service.partials.masthead')
-@include('partials.services')
-
+<x-section class="">
+    <x-container>
+    </x-container>
+</x-section>
 @endsection

@@ -14,9 +14,8 @@
         <x-col class="self-end xl:w-1/3">
             @php
             $links = [
-            'Find Services',
-            'Our Doctors',
-            'Schedule Appointment',
+            'Express Care',
+            'Emergency Department',
             'Get Directions',
             ];
             @endphp

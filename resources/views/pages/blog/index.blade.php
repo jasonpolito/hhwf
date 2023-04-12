@@ -27,7 +27,8 @@ $gutter = 3;
         <x-whisper class="mb-6">Recent articles</x-whisper>
         <x-cols :$gutter>
             <x-col class="lg:w-1/2" :$gutter>
-                <a href="/post" class="block mb-8 bg-center bg-cover border bg-primary-50 border-slate-400"
+                <a href="{{ route('pages.blog.show') }}"
+                    class="block mb-8 bg-center bg-cover border bg-primary-50 border-slate-400"
                     style="padding-top: 66%; background-image: url(https://picsum.photos/seed/{{ rand(10,999) }}/1200/800)"></a>
                 <div class="flex gap-1 mb-4 text-xs text-slate-500">
                     <div>{{ now()->format('F jS, Y') }}</div>
@@ -47,7 +48,8 @@ $gutter = 3;
             <x-col class="lg:w-1/2" :$gutter>
                 <div class="grid grid-rows-3 gap-6">
                     @for ($i = 0; $i < 3; $i++) <div class="grid grid-cols-12 row-span-1 gap-6">
-                        <a href="/post" class="col-span-5 bg-center bg-cover border bg-primary-50 border-slate-400"
+                        <a href="{{ route('pages.blog.show') }}"
+                            class="col-span-5 bg-center bg-cover border bg-primary-50 border-slate-400"
                             style="background-image: url(https://picsum.photos/seed/{{ rand(10,999) }}/600/300)"></a>
                         <div class="col-span-7">
                             <div class="flex gap-1 mb-4 text-xs text-slate-500">
@@ -76,7 +78,8 @@ $gutter = 3;
         <x-whisper class="mb-8">All articles</x-whisper>
         <x-cols :$gutter>
             @for ($i = 0; $i < 9; $i++) <x-col class="mb-8 md:w-1/2 lg:w-1/3" :$gutter>
-                <a href="/post" class="block mb-6 bg-center bg-cover border bg-primary-50 border-slate-400"
+                <a href="{{ route('pages.blog.show') }}"
+                    class="block mb-6 bg-center bg-cover border bg-primary-50 border-slate-400"
                     style="padding-top: 66%; background-image: url(https://picsum.photos/seed/{{ rand(10,999) }}/600/300)"></a>
                 <div class="flex gap-1 mb-4 text-xs text-slate-500">
                     <div>{{ now()->format('F jS, Y') }}</div>

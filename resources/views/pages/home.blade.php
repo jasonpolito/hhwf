@@ -14,7 +14,7 @@ $page = (object) [
 @include('partials.services')
 <x-section>
     <x-container>
-        // doctors
+        // kitchen sink
     </x-container>
 </x-section>
 {{-- @include('pages.home.partials.philosophy')

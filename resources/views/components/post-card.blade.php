@@ -23,7 +23,8 @@ $img = $post->img ? asset("assets/img/$post->img") : "https://picsum.photos/seed
     <div
         class="mb-4 prose-sm prose prose-a:no-underline hover:prose-a:underline prose-headings:font-serif prose-headings:font-normal">
         <h3>
-            <a href="/post" title="{{ $post->title }}" class="block">{{ Str::limit($post->title, 50) }}</a>
+            <a href="{{ $post->url ?? '#' }}" title="{{ $post->title }}"
+                class="block">{{ Str::limit($post->title, 50) }}</a>
         </h3>
     </div>
     @if (isset($excerpt))

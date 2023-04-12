@@ -100,7 +100,7 @@ $page = (object) [
                 </div>
                 <div class="py-16">
                     <h4 class="mb-2 text-xs text-slate-500">Tagged as:</h4>
-                    <x-tag-list :tags="$tags->random(rand(2,5))" />
+                    <x-tag-list :items="$tags->random(rand(2,5))" />
                 </div>
             </x-col>
             <x-col class="lg:w-1/3">

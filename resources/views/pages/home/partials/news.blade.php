@@ -10,7 +10,7 @@
                     <div class="flex items-center gap-6 pt-6 text-base not-prose">
                         <div>
 
-                            <x-btn class="text-white bg-primary">
+                            <x-btn class="text-white bg-primary" :url="route('pages.blog.index')">
                                 <span>All Articles</span>
                                 <x-heroicon-o-arrow-long-right class="w-6 h-6 transition group-hover:translate-x-2" />
                             </x-btn>
