@@ -17,6 +17,7 @@ $pages = [
     'locations',
     'services',
     'doctors',
+    'glossary',
     'blog',
 ];
 

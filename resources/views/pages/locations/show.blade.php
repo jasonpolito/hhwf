@@ -22,18 +22,19 @@ $loc = $locations->get(request()->input('l') ?? 0);
         <x-col class="self-end xl:w-1/3">
             @php
             $links = [
-            'Express Care',
-            'Emergency Department',
-            'Get Directions',
+            ['Find Doctors', '#doctors'],
+            ['Express Care', '#'],
+            ['Emergency Department', '#'],
+            ['Get Directions', '#'],
             ];
             @endphp
             <ul class="flex flex-wrap w-full pt-8 text-lg text-white md:w-2/3 lg:w-full xl:pt-0">
                 @foreach ($links as $link)
                 <li
                     class="w-full lg:w-1/4 xl:w-full border-t lg:border-t-0 lg:border-l xl:border-l-0 xl:border-t border-[rgba(255,255,255,.5)] first:border-none">
-                    <a href="#"
+                    <a href="{{ $link[1] }}"
                         class="flex justify-between gap-12 px-4 py-4 pr-6 decoration-white decoration-1 group hocus:underline">
-                        <span>{{ $link }}</span>
+                        <span>{{ $link[0] }}</span>
                         <div class="w-6">
                             <x-heroicon-o-chevron-right
                                 class="w-6 h-6 transition-transform group-hocus:translate-x-2" />
@@ -91,7 +92,7 @@ $loc = $locations->get(request()->input('l') ?? 0);
     </x-container>
 </x-section>
 
-<x-section class="bg-primary-50">
+<x-section class="bg-primary-50" id="doctors">
     <x-container>
         <x-text class="mb-8 text-center">
             <h3>Find doctors at {{ $loc['title'] }}</h3>
@@ -110,8 +111,7 @@ $loc = $locations->get(request()->input('l') ?? 0);
             </x-col>
             <x-col :$gutter class="lg:w-1/2">
                 <x-text>
-                    <p>Keep up with the latest news, events, and announcements from our team at Halifax Health and our
-                        community.</p>
+                    <p>Keep up with the latest news, events, and announcements from our team at {{ $loc['title'] }}.</p>
                 </x-text>
             </x-col>
         </x-cols>
