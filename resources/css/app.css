@@ -15,5 +15,9 @@ html {
 }
 
 .fill-parent {
-    @apply absolute top-0 left-0 w-full h-full;
+    @apply absolute top-0 left-0 flex items-center justify-center w-full h-full;
+}
+
+.bg-fill {
+    @apply bg-center bg-cover;
 }

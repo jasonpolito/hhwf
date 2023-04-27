@@ -6,7 +6,7 @@
                 <x-dev-note>Last CTA before footer</x-dev-note>
             </div>
             <div class="w-full sm:w-auto">
-                <x-btn class="text-white bg-slate-900">
+                <x-btn class="text-white bg-slate-900" :url="route('pages.schedule.index')">
                     Schedule Appointment
                 </x-btn>
             </div>

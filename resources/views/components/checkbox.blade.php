@@ -1,9 +1,13 @@
-@props(['id', 'text'])
+@props(['id', 'text', 'checked'])
+
+@php
+    $checked = $checked ?? !rand(0, 4);
+@endphp
 
 <label for="{{ $id ?? '' }}" class="flex gap-3 py-1 leading-6 cursor-pointer group hover:underline">
     <span>
         <span>
-            <input type="checkbox" id="{{ $id ?? '' }}" {{ !rand(0, 4) ? 'checked' : '' }}
+            <input type="checkbox" id="{{ $id ?? '' }}" {{ $checked ? 'checked' : '' }}
                    class="w-6 h-6 border appearance-none cursor-pointer peer border-slate-400 checked:border-primary checked:bg-primary group-hover:border-primary">
             <div class="items-center justify-center hidden text-white pointer-events-none fill-parent peer-checked:flex">
                 <div

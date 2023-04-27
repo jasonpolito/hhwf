@@ -2,7 +2,7 @@
     $links = [
         [
             'text' => 'Patients & Visitors',
-            'url' => '#',
+            'url' => route('pages.glossary.index'),
             'items' => [['text' => 'Directions & Parking', 'url' => '#'], ['text' => 'Billing Information', 'url' => '#'], ['text' => 'Medical Records', 'url' => '#'], ['text' => 'Patient Portal', 'url' => '#'], ['text' => 'View More', 'url' => '#']],
         ],
         [
@@ -22,7 +22,7 @@
         ],
         [
             'text' => 'For Medical Professionals',
-            'url' => '#',
+            'url' => route('pages.careers.index'),
             'items' => [
                 // ['text' => 'Careers', 'url' => '#'],
                 ['text' => 'Residency & Fellowship', 'url' => '#'],

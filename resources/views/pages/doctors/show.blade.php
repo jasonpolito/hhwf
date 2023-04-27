@@ -54,7 +54,7 @@
                     </x-cols>
                 </div>
 
-                <a href="#" class="col-span-2 py-8 text-xl group bg-primary-50 px-14">
+                <a href="{{ route('pages.schedule.index') }}" class="col-span-2 py-8 text-xl group bg-primary-50 px-14">
                     <div class="flex items-center justify-between gap-16">
                         <h3 class="decoration-slate-300 group-hover:underline">Schedule an appointment with
                             {{ $name[0] }}
@@ -170,7 +170,7 @@
                                 </ul>
 
                             </div>
-                            <a href="#" class="col-span-2 px-8 py-6 group bg-primary-50">
+                            <a href="{{ route('pages.schedule.index') }}" class="col-span-2 px-8 py-6 group bg-primary-50">
                                 <div class="flex items-center justify-between gap-16">
                                     <h3 class="decoration-slate-300 group-hover:underline">Schedule appointment today
                                     </h3>
