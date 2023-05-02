@@ -3,6 +3,7 @@
         [
             'text' => 'Patients & Visitors',
             'url' => route('pages.glossary.index'),
+            // 'url' => route('pages.glossary.index'),
             'items' => [['text' => 'Directions & Parking', 'url' => '#'], ['text' => 'Billing Information', 'url' => '#'], ['text' => 'Medical Records', 'url' => '#'], ['text' => 'Patient Portal', 'url' => '#'], ['text' => 'View More', 'url' => '#']],
         ],
         [

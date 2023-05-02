@@ -20,6 +20,7 @@ $pages = [
     'glossary',
     'contact',
     'schedule',
+    'search',
     'careers',
     'blog',
 ];

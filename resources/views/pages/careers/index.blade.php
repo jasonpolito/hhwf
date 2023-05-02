@@ -8,7 +8,8 @@
 @extends('layouts.default', ['reverse' => true, 'hidden' => ['news']])
 
 @section('content')
-    <x-grid-callout img="{{ asset('assets/img/happynurse.webp') }}">
+    <x-grid-callout mainArrowHelper="careers-halifax.icims.com" ctaArrowHelper="careers-halifax.icims.com"
+                    img="{{ asset('assets/img/happynurse.webp') }}">
         <x-slot:title>
             <x-cols class="items-center">
                 <x-col class="-mt-2 xl:w-2/3">
@@ -91,7 +92,7 @@
                         <p>At Halifax Health, we believe in developing a diverse group of talented healthcare professionals
                             who have a passion for serving the local community.</p>
                     </x-text>
-                    <div class="flex items-center gap-6 pt-12 text-base">
+                    <div class="flex items-center gap-6 pt-12 mb-16 text-base">
                         <div>
                             <x-btn class="text-white bg-primary" url="#resources">
                                 <span>Comprehensive Benefits</span>
@@ -101,9 +102,9 @@
                     </div>
                 </x-col>
                 <x-col class="lg:w-2/3 xl:w-1/2">
-                    <div class="mb-16"><img src="{{ asset('assets/img/ryan.jpg') }}" alt="">
+                    {{-- <div class="mb-16"><img src="{{ asset('assets/img/ryan.jpg') }}" alt="">
                         @include('partials.videocontrols')
-                    </div>
+                    </div> --}}
                     <div class="mb-16"><img src="{{ asset('assets/img/rory.jpg') }}" alt="">
                         @include('partials.videocontrols')
                     </div>
@@ -112,7 +113,8 @@
         </x-container>
     </x-section>
 
-    <x-grid-callout img="{{ asset('assets/img/nurses.jpg') }}" id="poolprogram">
+    <x-grid-callout mainArrowHelper="careers-halifax.icims.com" ctaArrowHelper="careers-halifax.icims.com"
+                    img="{{ asset('assets/img/nurses.jpg') }}" id="poolprogram">
         <x-slot:content>
             <h3 class="decoration-white/30 group-hover:underline">Seasonal Pool Program</h3>
             <p>Are you a nurse interested in pursuing travel nursing but don’t want to relocate? Halifax Health has a new
@@ -122,7 +124,8 @@
                 Night Shift – $75/hr
             </p>
         </x-slot:content>
-        <x-slot:cta>Learn More About 13-Week Assignments</x-slot:cta>
+        <x-slot:cta><span style="margin-right: -36px" class="whitespace-nowrap">Learn About 13-Week Assignments</span>
+        </x-slot:cta>
     </x-grid-callout>
 
     {{-- <x-hero :img="asset('assets/img/happynurse.webp')">

@@ -9,7 +9,10 @@
                     <div>
                         <input type="text" placeholder="Search Halifax Health"
                                class="px-4 py-2 pl-12 border rounded-full border-slate-300">
-                        <x-heroicon-o-magnifying-glass class="absolute w-6 h-6 left-4 top-2 text-slate-300" />
+                        <a href="{{ route('pages.search.index') }}"
+                           class="absolute block w-6 h-6 left-4 top-2 text-slate-300">
+                            <x-heroicon-o-magnifying-glass class="w-6 h-6 text-slate-300" />
+                        </a>
                     </div>
                 </li>
                 <li class="hidden md:block">

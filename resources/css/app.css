@@ -21,3 +21,16 @@ html {
 .bg-fill {
     @apply bg-center bg-cover;
 }
+
+
+[data-scrollspy] a .icon {
+    @apply hidden;
+}
+
+[data-scrollspy] a.active .icon {
+    @apply block;
+}
+
+[data-scrollspy] a.active {
+    @apply underline;
+}

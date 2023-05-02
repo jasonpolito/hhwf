@@ -23,15 +23,15 @@
                     <ul class="flex items-center gap-1 mb-2">
                         @for ($i = 0; $i < $stars; $i++)
                             <li>
-                                <x-heroicon-o-star class="w-6 h-6" />
+                                <x-heroicon-s-star class="w-6 h-6" />
                             </li>
                         @endfor
                         @for ($i = 0; $i < 5 - $stars; $i++)
                             <li>
-                                <x-heroicon-o-star class="w-6 h-6 text-slate-700" />
+                                <x-heroicon-s-star class="w-6 h-6 text-slate-700" />
                                 @if (!$i)
                                     <div class="absolute top-0 left-0 w-3 overflow-hidden">
-                                        <x-heroicon-o-star class="w-6 h-6" />
+                                        <x-heroicon-s-star class="w-6 h-6" />
                                     </div>
                                 @endif
                             </li>
