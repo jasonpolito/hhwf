@@ -25,7 +25,7 @@ $pages = [
     'blog',
 ];
 
-Route::view('/', 'pages.home');
+Route::view('/', 'pages.home')->name('pages.home.index');
 
 foreach ($pages as $page) {
     Route::view("/$page", "pages.$page.index")->name("pages.$page.index");

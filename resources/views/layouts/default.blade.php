@@ -16,16 +16,42 @@
 </head>
 
 <body>
-    <div class="py-6 text-white bg-primary">
-        <x-container>
-            <div class="flex justify-center">
-                <x-cols>
-                    <x-col>This an alert banner thing</x-col>
-                </x-cols>
+    <div>
+        @if (request()->input('alert'))
+            <div class="sticky top-0 py-6 text-white bg-primary" x-data="{ show: true, open: false }" x-show="show">
+                <x-container>
+                    <div class="flex justify-between text-lg">
+                        <div class="flex gap-4">
+                            <div>
+                                <x-heroicon-o-exclamation-triangle class="w-8 h-8" />
+                            </div>
+                            <div>
+                                <div class="flex items-center gap-4 cursor-pointer hover:underline"
+                                     @click="open = !open">
+                                    <div>What patients and communities need to know about COVID-19, the vaccines,
+                                        and staying safe.</div>
+                                    <div>
+                                        <x-heroicon-o-chevron-down class="w-6 h-6" />
+                                    </div>
+                                </div>
+
+                                <div class="py-8" x-show="open">
+                                    <div class="prose prose-white">
+                                        <p>{{ fake()->paragraph() }}</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <a href="#" class="block transition text-primary-200 hover:text-white"
+                           @click.prevent="show = false">
+                            <x-heroicon-o-x-mark class="w-8 h-8" />
+                        </a>
+                    </div>
+                </x-container>
             </div>
-        </x-container>
+        @endif
+        <div class="bg-white">@include('layouts.default.partials.header')</div>
     </div>
-    @include('layouts.default.partials.header')
     @yield('content')
     @include('layouts.default.partials.footer', [
         'reverse' => $reverse ?? false,

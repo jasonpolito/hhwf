@@ -2,9 +2,15 @@
     $links = [
         [
             'text' => 'Patients & Visitors',
-            'url' => route('pages.glossary.index'),
+            'url' => route('pages.glossary.index', ['t' => 'patients']),
             // 'url' => route('pages.glossary.index'),
-            'items' => [['text' => 'Directions & Parking', 'url' => '#'], ['text' => 'Billing Information', 'url' => '#'], ['text' => 'Medical Records', 'url' => '#'], ['text' => 'Patient Portal', 'url' => '#'], ['text' => 'View More', 'url' => '#']],
+            'items' => [
+                ['text' => 'Directions & Parking', 'url' => '#'], //
+                ['text' => 'Billing Information', 'url' => '#'],
+                ['text' => 'Medical Records', 'url' => '#'],
+                ['text' => 'Patient Portal', 'url' => '#'],
+                ['text' => 'View More', 'url' => route('pages.home.index', ['alert' => true])],
+            ],
         ],
         [
             'text' => 'Medical Services',

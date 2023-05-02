@@ -10,10 +10,10 @@
 @extends('layouts.default')
 @section('content')
     <x-section style="padding-top: 0">
-        <div class="pt-16"></div>
+        {{-- <div class="pt-16"></div> --}}
         <x-container>
             <div class="grid grid-cols-3">
-                <div class="col-span-1 row-span-3 bg-cover border border-slate-400"
+                <div class="col-span-1 row-span-3 bg-cover border-l border-slate-400"
                      style="background-image: url({{ $img }}); background-position: center top"></div>
                 <div class="col-span-2 row-span-2 p-16 text-white bg-slate-900">
 
